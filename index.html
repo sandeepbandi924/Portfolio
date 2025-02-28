@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Section</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<style>
+  .about-section {
+    text-align: center;
+    padding: 50px 0;
+  }
+  .about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  .about-section img {
+    width: 200px; /* Adjust the size as needed */
+    height: 200px;
+    border-radius: 50%; /* Makes the image round */
+    margin-bottom: 20px;
+  }
+  .about-section p {
+    color: #333;
+  }
+
+  /* Additional CSS for Projects Section */
+.projects-section h2 {
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+}
+.card {
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Adds a subtle shadow around the card */
+}
+.card-img-top {
+  max-height: 180px; /* Adjust this value to fit the image properly in the card */
+  object-fit: cover; /* This makes sure the image covers the area properly */
+}
+.card-body {
+  padding: 15px;
+}
+.card-title {
+  font-size: 1.25rem;
+}
+.card-text {
+  margin-bottom: 15px;
+}
+
+/* Additional CSS for Skills Section */
+.skills-section h2 {
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+}
+.skills-section .card {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.skills-section .card-img-top {
+  padding: 20px; /* Add padding around your images if needed */
+  background-color: #f8f9fa; /* Adjust the background color if your images have transparent areas */
+  height: 180px; /* Fixed height for consistency */
+  object-fit: contain; /* This will make sure the image is scaled properly within the container */
+}
+.skills-section .card-body {
+  padding: 15px;
+}
+.skills-section .card-title {
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+}
+.skills-section .btn-outline-primary {
+  color: #007bff;
+  border-color: #007bff;
+}
+.skills-section .btn-outline-primary:hover {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Additional CSS for Contact Section */
+.contact-section {
+  padding: 50px 0;
+}
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+.contact-section p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.social-icon {
+  width: 50px; /* Size of your icons */
+  margin-bottom: 10px;
+}
+/* Hover effect for icons */
+.social-icon:hover {
+  opacity: 0.7;
+}
+/* Style for links in the Contact section */
+.contact-section a {
+  color: #fff;
+  text-decoration: none; /* Removes underline from links */
+  display: inline-block; /* Allows for margin on the bottom */
+  margin-bottom: 10px;
+}
+.contact-section a:hover {
+  color: #ddd; /* Color when hovering over the link */
+}
+
+/* CSS for Sticky Navbar */
+.navbar {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Adds a shadow for depth */
+}
+
+/* Ensure padding is added to body to avoid content being hidden behind the navbar */
+body { 
+  padding-top: 56px; /* Adjust this value based on the height of your navbar */
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Style for navigation bar links */
+.navbar-nav .nav-link {
+  color: white;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #f8f9fa; /* Slightly lighter white when hovering over links */
+}
+
+/* Media query for responsive navbar collapsing */
+@media (max-width: 992px) {
+  .navbar-collapse {
+    background-color: #343a40; /* Same as navbar color for seamless look */
+  }
+}
+
+
+</style>
+
+</head>
+<body>
+
+<section id='about' class="about-section">
+  <div class="container">
+    <h2>About</h2>
+    <img src="images/about/1.jpg" alt="Profile Picture" class="about-image">
+        <p class="about-text">I am a passionate AI/ML Engineer with expertise in machine learning, deep learning, and data science. With hands-on experience in NLP, computer vision, and scalable AI solutions, I thrive on solving real-world challenges through data-driven innovation. I specialize in building robust ML models, deploying them efficiently, and optimizing system performance. Always eager to explore cutting-edge technologies, I am committed to continuous learning and impactful problem-solving.</p>
+        <!-- <p class="about-text">My expertise spans various domains, including natural language processing, computer vision, and model deployment. I am always eager to learn and apply new technologies to solve real-world challenges.</p> -->
+    </div>
+</section>
+
+<!-- Experience Section -->
+<section id="experience" class="experience-section bg-light">
+  <div class="container">
+    <h2 class="text-center">Experience</h2>
+    <div class="row">
+      <!-- Experience 1 -->
+      <div class="col-md-12 mb-4">
+        <div class="card p-3">
+          <div class="row no-gutters align-items-center">
+            <div class="col-md-2 text-center">
+              <img src="images/experience/beworld.png" alt="Beworld Web Services Logo" style="width: 100px; height: auto;">
+            </div>
+            <div class="col-md-10">
+              <div class="card-body">
+                <h5 class="card-title">Data Science Engineer</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Beworld Web Services, Hyderabad | Jun 2024 – Sept 2024</h6>
+                <p>Developed a customized feed algorithm and ML-driven ranking models, boosting engagement and content relevance. Enhanced sentiment classification accuracy by 20% using NLP techniques. Built automated ETL pipelines in Python and SQL, reducing data processing time by 30%. Designed scalable backend services using Flask, MongoDB, and Python, deploying ML models on AWS.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Experience 2 -->
+      <div class="col-md-12 mb-4">
+        <div class="card p-3">
+          <div class="row no-gutters align-items-center">
+            <div class="col-md-2 text-center">
+              <img src="images/experience/tcs.png" alt="TCS Logo" style="width: 100px; height: auto;">
+            </div>
+            <div class="col-md-10">
+              <div class="card-body">
+                <h5 class="card-title">ML Backend Engineer</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Tata Consultancy Services, Hyderabad | Jan 2022 – Feb 2024</h6>
+                <p>Developed ML models for risk assessment and fraud detection, enhancing underwriting accuracy. Built predictive analytics tools to optimize policy pricing. Created client segmentation models for better marketing strategies. Automated large-scale data processing using ETL pipelines and integrated AI-driven solutions into insurance operations, improving efficiency.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="projects-section bg-light" id="projects">
+  <div class="container">
+    <h2 class="text-center">Projects</h2>
+    <div class="row">
+      <!-- Project 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/1.jpg" class="card-img-top" alt="Project 1">
+          <div class="card-body">
+            <h5 class="card-title">Network Security</h5>
+            <p class="card-text">Developed a classification model to determine whether a network is valid or invalid using machine learning, leveraging feature extraction, anomaly detection, and security protocols.</p>
+            <a href="https://github.com/sandeepbandi924/End_To_End_ML_Project_NetworkSecurity/blob/main/Blog/blog.md" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Blog Post</a>
+            <a href="https://github.com/sandeepbandi924/End_To_End_ML_Project_NetworkSecurity" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+            Source Code
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Project 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/2.jpg" class="card-img-top" alt="Project 2">
+          <div class="card-body">
+            <h5 class="card-title">Customer Churn Prediction </h5>
+            <p class="card-text">Built a machine learning model to predict customer churn by analyzing behavioral patterns, transaction history, and engagement metrics to enhance retention strategies.</p>
+            <a href="https://github.com/sandeepbandi924/ANN_Churn_Prediction/blob/main/README.md" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Blog Post</a>
+            <a href="https://github.com/sandeepbandi924/End_To_End_ML_Project_NetworkSecurity" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+            Source Code
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Project 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/3.jpg" class="card-img-top" alt="Project 3">
+          <div class="card-body">
+            <h5 class="card-title">Gemstone Price Prediction</h5>
+            <p class="card-text">Developed a regression model to predict diamond prices using machine learning, leveraging features like carat, cut, color, clarity, and depth to ensure accurate valuation and market insights.</p>
+            <a href="https://github.com/sandeepbandi924/Gemstone_prediction_Aws1/blob/main/README.md" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Blog Post</a>
+            <a href="https://github.com/sandeepbandi924/Gemstone_prediction_Aws1" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+              Source Code
+            </a>
+          </div>
+        </div>
+      </div> 
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Skills Section -->
+<section id="skills" class="skills-section bg-white" id="skills">
+  <div class="container">
+    <h2 class="text-center">Skills</h2>
+    <div class="row">
+      <!-- Skill 1 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <img src="images/skills/1.png" class="card-img-top" alt="Python">
+          <div class="card-body">
+            <h5 class="card-title">Python</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nisl erat. Sed et purus ornare, eleifend tellus ut, fermentum arcu.</p>
+            <a href="#" class="btn btn-outline-primary">Link to course or bootcamp</a>
+          </div>
+        </div>
+      </div>
+      <!-- Skill 2 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <img src="images/skills/2.png" class="card-img-top" alt="Data Visualization">
+          <div class="card-body">
+            <h5 class="card-title">Data Visualization</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nisl erat. Sed et purus ornare, eleifend tellus ut, fermentum arcu.</p>
+            <a href="#" class="btn btn-outline-primary">Link to course or bootcamp</a>
+          </div>
+        </div>
+      </div>
+      <!-- Skill 3 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <img src="images/skills/3.png" class="card-img-top" alt="SQL">
+          <div class="card-body">
+            <h5 class="card-title">SQL</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nisl erat. Sed et purus ornare, eleifend tellus ut, fermentum arcu.</p>
+            <a href="#" class="btn btn-outline-primary">Link to course or bootcamp</a>
+          </div>
+        </div>
+      </div>
+      <!-- Skill 4 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <img src="images/skills/4.png" class="card-img-top" alt="Data Storytelling">
+          <div class="card-body">
+            <h5 class="card-title">Data Storytelling</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nisl erat. Sed et purus ornare, eleifend tellus ut, fermentum arcu.</p>
+            <a href="#" class="btn btn-outline-primary">Link to course or bootcamp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Contact Me Section -->
+<section id="contact" class="contact-section text-center text-white bg-dark">
+  <div class="container">
+    <h2>Contact Me</h2>
+    <div class="row">
+      <div class="col-lg-6">
+        <p><i class="fas fa-envelope"></i> bandisandeep1423@gmail.com</p>
+      </div>
+      <div class="col-lg-6">
+        <p><i class="fas fa-phone"></i>+91-9494420777</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-2 col-md-4 mb-4">
+        <a href="https://linkedin.com/in/sandeepbandi" target="_blank">
+          <img src="icons/linkedin.png" alt="LinkedIn" class="social-icon">
+          LinkedIn
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-4 mb-4">
+        <a href="https://twitter.com/SANDEEPBAND1374" target="_blank">
+          <img src="icons/twitter.png" alt="Twitter" class="social-icon">
+          Twitter
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-4 mb-4">
+        <a href="https://github.com/sandeepbandi924" target="_blank">
+          <img src="icons/github.png" alt="GitHub" class="social-icon">
+          GitHub
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-4 mb-4">
+        <a href="https://leetcode.com/u/sandeepbandi924/" target="_blank">
+          <img src="icons/leetcode.png" alt="Leetcode" class="social-icon">
+          Leetcode
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-4 mb-4">
+        <a href="https://www.youtube.com/@sandeepbandi924" target="_blank">
+          <img src="icons/youtube.png" alt="YouTube" class="social-icon">
+          YouTube
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sticky Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#home">Portfolio</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#experience">Experience</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#projects">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#skills">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Bootstrap JS and dependencies (jQuery and Popper) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.5/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
