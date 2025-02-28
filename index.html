@@ -53,31 +53,83 @@
   margin-bottom: 40px;
   font-size: 2.5rem;
 }
+
+.skills-section .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills-section .skills-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap; /* Prevents wrapping */
+  gap: 15px; /* Adds spacing between cards */
+  overflow-x: auto; /* Allows scrolling if the screen is too small */
+  padding-bottom: 10px;
+}
+
 .skills-section .card {
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  flex: 1;
+  min-width: 18%; /* Ensures five cards fit within a row */
+  max-width: 18%;
 }
+
 .skills-section .card-img-top {
-  padding: 20px; /* Add padding around your images if needed */
-  background-color: #f8f9fa; /* Adjust the background color if your images have transparent areas */
-  height: 180px; /* Fixed height for consistency */
-  object-fit: contain; /* This will make sure the image is scaled properly within the container */
+  padding: 20px;
+  background-color: #f8f9fa;
+  height: 180px;
+  object-fit: contain;
 }
+
 .skills-section .card-body {
   padding: 15px;
 }
+
 .skills-section .card-title {
   font-size: 1.25rem;
   margin-bottom: 15px;
 }
+
 .skills-section .btn-outline-primary {
   color: #007bff;
   border-color: #007bff;
 }
+
 .skills-section .btn-outline-primary:hover {
   color: #fff;
   background-color: #007bff;
   border-color: #007bff;
 }
+
+/* Ensure responsiveness for smaller screens */
+@media (max-width: 992px) {
+  .skills-section .skills-row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .skills-section .card {
+    min-width: 30%; /* Adjusts width for smaller screens */
+    max-width: 30%;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-section .card {
+    min-width: 45%; /* Makes two cards per row on smaller screens */
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 576px) {
+  .skills-section .card {
+    min-width: 100%; /* Full width for small screens */
+    max-width: 100%;
+  }
+}
+
 
 /* Additional CSS for Contact Section */
 .contact-section {
@@ -149,8 +201,8 @@ html {
 
 <section id='about' class="about-section">
   <div class="container">
-    <h2>About</h2>
     <img src="images/about/1.jpg" alt="Profile Picture" class="about-image">
+    <h2>Sandeep Bandi</h2>
         <p class="about-text">I am a passionate AI/ML Engineer with expertise in machine learning, deep learning, and data science. With hands-on experience in NLP, computer vision, and scalable AI solutions, I thrive on solving real-world challenges through data-driven innovation. I specialize in building robust ML models, deploying them efficiently, and optimizing system performance. Always eager to explore cutting-edge technologies, I am committed to continuous learning and impactful problem-solving.</p>
         <!-- <p class="about-text">My expertise spans various domains, including natural language processing, computer vision, and model deployment. I am always eager to learn and apply new technologies to solve real-world challenges.</p> -->
     </div>
@@ -251,54 +303,54 @@ html {
   </div>
 </section>
 
-
 <!-- Skills Section -->
-<section id="skills" class="skills-section bg-white" id="skills">
+<section id="skills" class="skills-section bg-white">
   <div class="container">
     <h2 class="text-center">Skills</h2>
-    <div class="row">
-      <!-- Skill 1 -->
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card">
-          <img src="images/skills/1.png" class="card-img-top" alt="Python">
-          <div class="card-body">
-            <h5 class="card-title">Python</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nisl erat. Sed et purus ornare, eleifend tellus ut, fermentum arcu.</p>
-            <a href="#" class="btn btn-outline-primary">Link to course or bootcamp</a>
-          </div>
+    <div class="skills-row">
+      <!-- Skill 1: Python -->
+      <div class="card">
+        <img src="images/skills/python.png" class="card-img-top" alt="Python">
+        <div class="card-body">
+          <h5 class="card-title">Python</h5>
+          <p class="card-text">Proficient in Python programming for data science, automation, and AI applications.</p>
+          <a href="#" class="btn btn-outline-primary">Learn More</a>
         </div>
       </div>
-      <!-- Skill 2 -->
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card">
-          <img src="images/skills/2.png" class="card-img-top" alt="Data Visualization">
-          <div class="card-body">
-            <h5 class="card-title">Data Visualization</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nisl erat. Sed et purus ornare, eleifend tellus ut, fermentum arcu.</p>
-            <a href="#" class="btn btn-outline-primary">Link to course or bootcamp</a>
-          </div>
+      <!-- Skill 2: SQL & MongoDB -->
+      <div class="card">
+        <img src="images/skills/sql_mongo.png" class="card-img-top" alt="SQL & MongoDB">
+        <div class="card-body">
+          <h5 class="card-title">SQL & MongoDB</h5>
+          <p class="card-text">Expertise in relational (SQL) and NoSQL (MongoDB) databases for scalable data storage.</p>
+          <a href="#" class="btn btn-outline-primary">Learn More</a>
         </div>
       </div>
-      <!-- Skill 3 -->
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card">
-          <img src="images/skills/3.png" class="card-img-top" alt="SQL">
-          <div class="card-body">
-            <h5 class="card-title">SQL</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nisl erat. Sed et purus ornare, eleifend tellus ut, fermentum arcu.</p>
-            <a href="#" class="btn btn-outline-primary">Link to course or bootcamp</a>
-          </div>
+      <!-- Skill 3: Data Analysis -->
+      <div class="card">
+        <img src="images/skills/data_analysis.png" class="card-img-top" alt="Data Analysis">
+        <div class="card-body">
+          <h5 class="card-title">Data Analysis</h5>
+          <p class="card-text">Experience in exploratory data analysis, visualization, and statistical techniques.</p>
+          <a href="#" class="btn btn-outline-primary">Learn More</a>
         </div>
       </div>
-      <!-- Skill 4 -->
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card">
-          <img src="images/skills/4.png" class="card-img-top" alt="Data Storytelling">
-          <div class="card-body">
-            <h5 class="card-title">Data Storytelling</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nisl erat. Sed et purus ornare, eleifend tellus ut, fermentum arcu.</p>
-            <a href="#" class="btn btn-outline-primary">Link to course or bootcamp</a>
-          </div>
+      <!-- Skill 4: Machine Learning, Deep Learning, NLP -->
+      <div class="card">
+        <img src="images/skills/ml_dl_nlp.png" class="card-img-top" alt="ML, DL, NLP">
+        <div class="card-body">
+          <h5 class="card-title">Machine Learning, Deep Learning, NLP</h5>
+          <p class="card-text">Hands-on experience with ML models, deep learning architectures, and NLP tasks.</p>
+          <a href="#" class="btn btn-outline-primary">Learn More</a>
+        </div>
+      </div>
+      <!-- Skill 5: Cloud AWS -->
+      <div class="card">
+        <img src="images/skills/aws.png" class="card-img-top" alt="AWS Cloud">
+        <div class="card-body">
+          <h5 class="card-title">Cloud AWS (S3, EC2, Elastic Beanstalk, Sagemaker)</h5>
+          <p class="card-text">Proficiency in AWS cloud services for AI/ML deployment, storage, and computing.</p>
+          <a href="#" class="btn btn-outline-primary">Learn More</a>
         </div>
       </div>
     </div>
