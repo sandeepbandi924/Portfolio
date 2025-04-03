@@ -49,6 +49,13 @@
 }
 
 /* Additional CSS for Skills Section */
+
+.skills-section .card-img-top {
+  width: 100%; /* Ensures full width */
+  height: 200px; /* Adjust height as needed */
+  object-fit: cover; /* Ensures proper scaling without distortion */
+}
+
 .skills-section h2 {
   margin-bottom: 40px;
   font-size: 2.5rem;
@@ -193,68 +200,302 @@ html {
   }
 }
 
-
 </style>
 
 </head>
 <body>
 
-<section id='about' class="about-section">
-  <div class="container">
-    <img src="images/about/1.jpg" alt="Profile Picture" class="about-image">
-    <h2>Sandeep Bandi</h2>
-        <p class="about-text">I am a Data Scientist and AI/ML Engineer with expertise in machine learning, deep learning, Generative AI (GenAI), and big data analytics. I specialize in developing AI-driven solutions, predictive models, and scalable ML pipelines to solve complex real-world challenges.</p>
-        <p>With a strong passion for Natural Language Processing (NLP), MLOps, and Cloud AI, I thrive in optimizing AI systems, deploying robust models, and integrating cutting-edge AI techniques into production environments. My work focuses on building intelligent applications, enhancing automation, and driving innovation through AI.</p>
-    
+  <!-- About Me Section -->
+<section id="about" class="about-section bg-light py-5">
+  <div class="container text-center">
+    <div class="row justify-content-center align-items-center">
+      
+      <!-- Profile Image -->
+      <div class="col-lg-4">
+        <img src="images/about/1.jpg" alt="Sandeep Bandi" 
+             class="about-image rounded-circle img-fluid shadow-lg fade-in"
+             style="width: 350px; height: 350px; object-fit: cover; border: 6px solid #007bff;">
       </div>
-</section>
-
-<!-- Experience Section -->
-<section id="experience" class="experience-section bg-light">
-  <div class="container">
-    <!-- <h2 class="text-center">Experience</h2> -->
-    <h2 class="text-center mb-4">Experience</h2>
-    <div class="row">
-      <!-- Experience 1 -->
-      <div class="col-md-12 mb-4">
-        <div class="card p-3">
-          <div class="row no-gutters align-items-center">
-            <div class="col-md-2 text-center">
-              <img src="images/experience/beworld.png" alt="Beworld Web Services Logo" style="width: 100px; height: auto;">
-            </div>
-            <div class="col-md-10">
-              <div class="card-body">
-                <h5 class="card-title">AI/ML Engineer</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Beworld Web Services, Hyderabad </h6>
-                <p>Developed a customized feed algorithm and ML-driven ranking models, boosting engagement and content relevance. Enhanced sentiment classification accuracy by 20% using NLP techniques. Built automated ETL pipelines in Python and SQL, reducing data processing time by 30%. Designed scalable backend services using Flask, MongoDB, and Python, deploying ML models on AWS.</p>
-              </div>
-            </div>
-          </div>
+      
+      <!-- About Me Content -->
+      <div class="col-lg-8 text-left">
+        <h2 class="mb-3"><span id="typed-name"></span></h2>
+        <h4 class="text-primary font-weight-bold"><span id="typed-role"></span></h4>
+        
+        <p>
+          I am a passionate <strong>AI/ML Engineer</strong> specializing in building scalable machine learning solutions and AI-driven recommendation systems.  
+          With expertise in <strong>ML, Deep Learning, NLP, MLOps, and Big Data</strong>, I have developed and deployed intelligent models that enhance user engagement,  
+          optimize business decisions, and improve operational efficiency.
+        </p>
+        <p>
+          I have hands-on experience working with <strong>Python, TensorFlow, Scikit-learn, LangChain, OpenAI APIs, Hugging Face models, and LLMs</strong>.  
+          My expertise extends to MLOps, where I implement <strong>MLflow, Docker, Kubernetes, CI/CD (Jenkins), and cloud platforms (AWS & GCP)</strong>  
+          for seamless AI deployment and monitoring.
+        </p>
+        <p>
+          I am always eager to explore emerging AI technologies, solve complex problems, and drive innovation through data-driven insights.
+        </p>
+        
+        <!-- Buttons -->
+        <div class="mt-4">
+          <a href="#contact" class="btn btn-primary btn-lg mr-2">Get in Touch</a>
+          <a href="images/resume/SKB_Resume.pdf" class="btn btn-outline-dark btn-lg" target="_blank">
+            <i class="fas fa-download"></i> Download Resume
+          </a>
         </div>
       </div>
-      <!-- Experience 2 -->
-      <div class="col-md-12 mb-4">
-        <div class="card p-3">
-          <div class="row no-gutters align-items-center">
-            <div class="col-md-2 text-center">
-              <img src="images/experience/tcs.png" alt="TCS Logo" style="width: 100px; height: auto;">
-            </div>
-            <div class="col-md-10">
-              <div class="card-body">
-                <h5 class="card-title">ML Engineer</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Tata Consultancy Services, Kolkata </h6>
-                <p>Developed ML models for risk assessment and fraud detection, enhancing underwriting accuracy. Built predictive analytics tools to optimize policy pricing. Created client segmentation models for better marketing strategies. Automated large-scale data processing using ETL pipelines and integrated AI-driven solutions into insurance operations, improving efficiency.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      
     </div>
   </div>
 </section>
 
+<!-- JavaScript for Typing Effect & Fade-in Animation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      // Typing Effect for Name & Role
+      new Typed("#typed-name", {
+          strings: ["Sandeep Bandi"],
+          typeSpeed: 100,
+          showCursor: false
+      });
+
+      new Typed("#typed-role", {
+          strings: ["AI/ML Engineer", "Deep Learning Specialist", "MLOps Practitioner"],
+          typeSpeed: 80,
+          backSpeed: 50,
+          backDelay: 2000,
+          loop: true
+      });
+
+      // Fade-in Effect on Scroll
+      const fadeInElements = document.querySelectorAll('.fade-in');
+      const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  entry.target.classList.add('visible');
+              }
+          });
+      }, { threshold: 0.3 });
+
+      fadeInElements.forEach(el => observer.observe(el));
+  });
+</script>
+
+<!-- CSS for Styling & Animation -->
+<style>
+/* About Me Section */
+.about-section {
+    padding: 80px 0;
+    background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+}
+
+/* Typing Effect */
+#typed-name {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #343a40;
+}
+#typed-role {
+    font-size: 1.5rem;
+    color: #007bff;
+}
+
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Button Styling */
+.btn-lg {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+}
+</style>
+
+
+
+
+<!-- Experience Section -->
+<section id="experience" class="experience-section py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Experience</h2>
+
+    <!-- Experience Carousel -->
+    <div id="experienceCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- Experience 1: BeWorld Web Services -->
+        <div class="carousel-item active">
+          <div class="experience-card beworld">
+            <div class="row align-items-center">
+              <div class="col-md-2 text-center">
+                <img src="images/experience/beworld.png" class="company-logo" alt="Beworld Logo">
+              </div>
+              <div class="col-md-10">
+                <h4>AI/ML Engineer</h4>
+                <h6 class="text-muted">Beworld Web Services, Hyderabad</h6>
+                <p>Developed personalized recommendation systems and optimized ML pipelines.</p>
+
+                <button class="btn btn-outline-light btn-sm" data-bs-toggle="collapse" data-bs-target="#beworld-details">View More</button>
+                <div class="collapse mt-2" id="beworld-details">
+                  <ul>
+                    <li>Developed & optimized a feed algorithm to create personalized user interest feeds, improving engagement and content relevance.</li>
+                    <li>Implemented machine learning models for recommendation systems, leveraging user interaction analysis to enhance content ranking.</li>
+                    <li>Worked with Python, TensorFlow, Scikit-learn, and NLP techniques to develop AI-driven intelligent solutions.</li>
+                    <li>Built scalable backend services with Flask, MongoDB, and Python, deploying ML models on AWS using automated CI/CD pipelines.</li>
+                    <li>Collaborated with cross-functional teams to integrate AI-driven recommendations into real-world applications, boosting user engagement.</li>
+                  </ul>
+                  <div class="skill-bars">
+                    <p>Python</p>
+                    <div class="progress"><div class="progress-bar" style="width: 90%;"></div></div>
+                    <p>Machine Learning</p>
+                    <div class="progress"><div class="progress-bar" style="width: 85%;"></div></div>
+                    <p>AWS</p>
+                    <div class="progress"><div class="progress-bar" style="width: 80%;"></div></div>
+                  </div>
+                  <p class="font-italic">💡 Passionate about AI, MLOps, and scalable intelligent systems—driving impactful innovations through data and technology.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience 2: TCS -->
+        <div class="carousel-item">
+          <div class="experience-card tcs">
+            <div class="row align-items-center">
+              <div class="col-md-2 text-center">
+                <img src="images/experience/tcs.png" class="company-logo" alt="TCS Logo">
+              </div>
+              <div class="col-md-10">
+                <h4>ML Engineer</h4>
+                <h6 class="text-muted">Tata Consultancy Services (TCS), Hyderabad</h6>
+                <p>Built ML models for risk assessment and fraud detection in insurance.</p>
+
+                <button class="btn btn-outline-light btn-sm" data-bs-toggle="collapse" data-bs-target="#tcs-details">View More</button>
+                <div class="collapse mt-2" id="tcs-details">
+                  <ul>
+                    <li>Developed machine learning models for risk assessment, fraud detection, and customer segmentation in the insurance domain.</li>
+                    <li>Built and deployed predictive analytics solutions to improve policyholder risk evaluation and underwriting efficiency.</li>
+                    <li>Worked with Python, Scikit-learn, TensorFlow, and NLP techniques to extract insights from structured and unstructured insurance data.</li>
+                    <li>Designed data pipelines for handling large-scale insurance datasets using Apache Spark, Airflow, and SQL-based databases.</li>
+                    <li>Implemented MLOps best practices with MLflow, Docker, Kubernetes, and Jenkins CI/CD pipelines for scalable model deployment.</li>
+                    <li>Collaborated with data scientists, actuaries, and business teams to align AI-driven solutions with insurance risk and compliance requirements.</li>
+                  </ul>
+                  <div class="skill-bars">
+                    <p>Python</p>
+                    <div class="progress"><div class="progress-bar" style="width: 95%;"></div></div>
+                    <p>Data Processing</p>
+                    <div class="progress"><div class="progress-bar" style="width: 80%;"></div></div>
+                    <p>Model Training</p>
+                    <div class="progress"><div class="progress-bar" style="width: 75%;"></div></div>
+                  </div>
+                  <p class="font-italic">💡 Leveraging AI/ML to drive innovation in insurance—enhancing risk evaluation, fraud detection, and customer insights through data-driven solutions.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience 3: iNeuron.ai Internship -->
+        <div class="carousel-item">
+          <div class="experience-card ineuron">
+            <div class="row align-items-center">
+              <div class="col-md-2 text-center">
+                <img src="images/certifications/ineuron.jpg" class="company-logo" alt="iNeuron Logo">
+              </div>
+              <div class="col-md-10">
+                <h4>Project Intern</h4>
+                <h6 class="text-muted">iNeuron.ai</h6>
+                <p class="text-muted"><i>Nov 2023 - Jan 2024</i></p>
+                <p>Developed a machine learning system for income price prediction.</p>
+
+                <button class="btn btn-outline-light btn-sm" data-bs-toggle="collapse" data-bs-target="#ineuron-details">View More</button>
+                <div class="collapse mt-2" id="ineuron-details">
+                  <ul>
+                    <li>📊 <strong>Key Stages:</strong> Data Ingestion, EDA, Data Transformation, Model Training & Prediction Pipelines, Model Deployment</li>
+                    <li>🛠 <strong>Tech Stack:</strong> Python, VS Code, GitHub, Docker, AWS</li>
+                    <li>🚀 <strong>Impact:</strong> Hands-on experience in end-to-end ML project implementation.</li>
+                  </ul>
+                  <a href="images/intern/ineuron_intern.pdf" class="btn btn-sm btn-outline-dark" target="_blank">View Internship Certificate</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#experienceCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#experienceCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+    <!-- Resume Download -->
+    <!-- <div class="text-center mt-4">
+      <a href="images/resume/SKB_Resume.pdf" download class="btn btn-success">📄 Download Resume</a>
+    </div> -->
+
+  </div>
+</section>
+
+<!-- JavaScript for Auto-Scrolling -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  setInterval(() => {
+    document.querySelector("#experienceCarousel").carousel("next");
+  }, 6000);
+});
+</script>
+
+<!-- CSS for Styling -->
+<style>
+/* Experience Card */
+.experience-card {
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  transition: transform 0.3s ease-in-out;
+}
+.experience-card:hover {
+  transform: translateY(-5px);
+}
+.beworld { background: linear-gradient(135deg, #c31432,#240b36); }
+.tcs { background: linear-gradient(135deg, #1e3c72,  #2a5298); }
+.ineuron { background: linear-gradient(135deg, #283c86, #45a247); }
+
+/* Company Logo */
+.company-logo {
+  width: 80px;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+.company-logo:hover { transform: scale(1.1); }
+
+/* Skill Progress Bars */
+.skill-bars p { margin-bottom: 5px; }
+.progress {
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.progress-bar { background-color: white; }
+</style>
+
+
+
 <!-- Projects Section -->
-<section id="projects" class="projects-section bg-light">
+<section id="projects" class="projects-section bg-light py-5">
   <div class="container">
     <h2 class="text-center mb-4">Projects</h2>
 
@@ -262,97 +503,157 @@ html {
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
 
+              <!-- Project 1: Hotel Reservation Cancellation Prediction -->
         <div class="swiper-slide">
           <div class="card">
-            <img src="images/projects/hotel.jpg" class="card-img-top" alt="Project 1"  style="width: 500; height: auto;">
+            <img src="images/projects/hotel.jpg" class="card-img-top" alt="Hotel Reservation Cancellation Prediction" style="width: 500px; height: auto;">
             <div class="card-body">
               <h5 class="card-title">Hotel Reservation Cancellation Prediction</h5>
-              <p class="card-text">Designed an machine learning-based web application that predicts whether a hotel reservation will be canceled based on various booking details such as lead time, number of nights, meal plan, and room type.</p>
+              <p class="card-text">
+                Built an AI-powered system to predict hotel reservation cancellations using advanced machine learning techniques and cloud-based deployment.
+              </p>
+              <ul class="list-unstyled">
+                <li>✅ <strong>ETL Pipeline:</strong> Automated data preprocessing and transformation.</li>
+                <li>✅ <strong>ML Model Training:</strong> Developed models using LightGBM.</li>
+                <li>✅ <strong>Web App:</strong> Deployed a user-friendly interface using Streamlit.</li>
+                <li>✅ <strong>Deployment:</strong> Implemented CI/CD with Docker, Jenkins & GCP Run.</li>
+              </ul>
               <a href="https://hotelreservationprediction.streamlit.app/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Web App</a>
               <a href="https://github.com/sandeepbandi924/Hotel_Reservation_Prediction" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Source Code</a>
             </div>
           </div>
         </div>
 
-        <!-- Project 1 -->
+        <!-- Project 2: Network Security -->
         <div class="swiper-slide">
           <div class="card">
-            <img src="images/projects/1.jpg" class="card-img-top" alt="Project 1"  style="width: 500; height: auto;">
+            <img src="images/projects/network.jpg" class="card-img-top" alt="Network Security Project" style="width: 500px; height: auto;">
             <div class="card-body">
               <h5 class="card-title">Network Security</h5>
-              <p class="card-text">Developed an ML model for network validation using anomaly detection techniques, improving cybersecurity by identifying potential threats and unauthorized access.</p>
+              <p class="card-text">
+                Developed a robust ML pipeline to detect cyber threats and unauthorized network access in real-time using AI-driven security analytics.
+              </p>
+              <ul class="list-unstyled">
+                <li>✅ <strong>Data Processing:</strong> Cleaned and transformed network traffic logs.</li>
+                <li>✅ <strong>Feature Engineering:</strong> Extracted key network attributes for anomaly detection.</li>
+                <li>✅ <strong>ML Model Training:</strong> Built supervised models for cybersecurity threat detection.</li>
+                <li>✅ <strong>Deployment:</strong> Integrated with FastAPI for scalable real-time analysis.</li>
+              </ul>
               <a href="https://networksecurity.streamlit.app/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Web App</a>
               <a href="https://github.com/sandeepbandi924/End_To_End_ML_Project_NetworkSecurity" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Source Code</a>
             </div>
           </div>
         </div>
 
-        <!-- Project 2 -->
+        <!-- Project 3: Wine Quality Prediction -->
         <div class="swiper-slide">
           <div class="card">
-            <img src="images/projects/winequality.jpg" class="card-img-top" alt="Project 2" style="width: auto; height: auto;">
+            <img src="images/projects/winequality.jpg" class="card-img-top" alt="Wine Quality Prediction" style="width: 500px; height: auto;">
             <div class="card-body">
               <h5 class="card-title">Wine Quality Prediction</h5>
-              <p class="card-text">Developed a machine learning model to predict wine quality by analyzing key chemical properties and optimizing accuracy through advanced feature engineering and tuning. 
-                
+              <p class="card-text">
+                Built a machine learning model to predict wine quality based on key chemical properties, improving accuracy through feature engineering and hyperparameter tuning.
               </p>
-              <a href="https://winequalitypred.streamlit.app/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Web App</a>
+              <ul class="list-unstyled">
+                <li>✅ <strong>Data Processing:</strong> Cleaned, preprocessed, and handled missing values.</li>
+                <li>✅ <strong>Feature Engineering:</strong> Selected key attributes for optimal model performance.</li>
+                <li>✅ <strong>Model Training:</strong> Implemented Random Forest, XGBoost & Gradient Boosting.</li>
+                <li>✅ <strong>Deployment:</strong> Developed a scalable web app using Flask & Streamlit.</li>
+              </ul>
+              <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Web App</a>
               <a href="https://github.com/sandeepbandi924/End-to-End-Wine-Quality-Prediction" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Source Code</a>
             </div>
           </div>
         </div>
 
-        <!-- Project 3 -->
+
+        <!-- Project 4: ANN Churn Prediction -->
         <div class="swiper-slide">
           <div class="card">
-            <img src="images/projects/2.jpg" class="card-img-top" alt="Project 2" style="width: auto; height: auto;">
+            <img src="images/projects/customerchurn.jpg" class="card-img-top" alt="ANN Churn Prediction" style="width: 500px; height: auto;">
             <div class="card-body">
-              <h5 class="card-title">Customer Churn Prediction</h5>
-              <p class="card-text">Built an ML model to predict customer churn using behavioral data and transaction history, helping businesses enhance retention strategies and reduce attrition.</p>
-              <a href="https://annchurnprediction.streamlit.app/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Web App</a>
-              <a href="https://github.com/sandeepbandi924/End_To_End_ML_Project_NetworkSecurity" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Source Code</a>
+              <h5 class="card-title">ANN Churn Prediction</h5>
+              <p class="card-text">
+                Developed an Artificial Neural Network (ANN) model to predict customer churn, helping businesses retain at-risk customers and optimize retention strategies.
+              </p>
+              <ul class="list-unstyled">
+                <li>✅ <strong>Data Processing:</strong> Preprocessed customer data, handled missing values, and encoded categorical features.</li>
+                <li>✅ <strong>Model Development:</strong> Built an ANN with TensorFlow/Keras using ReLU and sigmoid activations.</li>
+                <li>✅ <strong>Performance:</strong> Achieved 92% accuracy with optimized hyperparameters.</li>
+                <li>✅ <strong>Deployment:</strong> Deployed a real-time churn prediction web app using Streamlit.</li>
+              </ul>
+              <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Web App</a>
+              <a href="https://github.com/sandeepbandi924/ANN-Churn-Prediction" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Source Code</a>
             </div>
           </div>
         </div>
 
-        <!-- Project 3 -->
+
+        <!-- Project 5: Gemstone Prediction using AWS -->
         <div class="swiper-slide">
           <div class="card">
-            <img src="images/projects/3.jpg" class="card-img-top" alt="Project 3">
+            <img src="images/projects/gemstone.jpg" class="card-img-top" alt="Gemstone Prediction using AWS" style="width: 500px; height: auto;">
             <div class="card-body">
-              <h5 class="card-title">Gemstone Price Prediction</h5>
-              <p class="card-text">Developed a regression model to estimate diamond prices based on carat, cut, color, and clarity, ensuring accurate valuation and market insights.</p>
-              <a href="https://gemstonepricepredict.streamlit.app/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Web App</a>
+              <h5 class="card-title">Gemstone Prediction using AWS</h5>
+              <p class="card-text">
+                Developed a machine learning model to predict gemstone types based on key features, deployed on AWS for cloud-based inference.
+              </p>
+              <ul class="list-unstyled">
+                <li>✅ <strong>Data Processing:</strong> Cleaned and preprocessed gemstone datasets for feature extraction.</li>
+                <li>✅ <strong>Model Training:</strong> Implemented ML models using Scikit-Learn and fine-tuned for high accuracy.</li>
+                <li>✅ <strong>AWS Deployment:</strong> Deployed using AWS Lambda and API Gateway for scalable cloud-based predictions.</li>
+                <li>✅ <strong>API Integration:</strong> Built a Flask backend to serve predictions via API endpoints.</li>
+              </ul>
+              <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Web App</a>
               <a href="https://github.com/sandeepbandi924/Gemstone_prediction_Aws1" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Source Code</a>
             </div>
           </div>
         </div>
 
-        <!-- Project 4 -->
+
+        <!-- Project 6: Weather Prediction Model Using ANN -->
         <div class="swiper-slide">
           <div class="card">
-            <img src="images/projects/soiltemp.avif" class="card-img-top" alt="Project 3">
+            <img src="images/projects/soiltemp.avif" class="card-img-top" alt="Weather Prediction Model Using ANN" style="width: 500px; height: auto;">
             <div class="card-body">
-              <h5 class="card-title">Soil Temperature Depth Prediction</h5>
-              <p class="card-text">Created an ML model to predict soil temperature at various depths using soil-related features, aiding in climate modeling and agricultural planning.</p>
-              <a href="https://soiltemperatureprediction.streamlit.app/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Web App</a>
-              <a href="https://github.com/sandeepbandi924/Teamparature_Depth_Prediction" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Source Code</a>
+              <h5 class="card-title">Weather Prediction Model Using ANN</h5>
+              <p class="card-text">
+                Built an interactive web application using ANN to predict temperature at different soil depths based on weather parameters. Deployed via Streamlit with CI/CD integration using GitHub Actions.
+              </p>
+              <ul class="list-unstyled">
+                <li>✅ <strong>ANN Model:</strong> Predicts temperature based on air temperature, rainfall, and day of the year.</li>
+                <li>✅ <strong>Streamlit UI:</strong> Interactive web app for user-friendly experience.</li>
+                <li>✅ <strong>Multi-Region Support:</strong> Trained models for Texas & New York datasets.</li>
+                <li>✅ <strong>CI/CD Integration:</strong> Automated deployment via GitHub Actions.</li>
+              </ul>
+              <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Web App</a>
+              <a href="https://github.com/sandeepbandi924/weather-prediction-model" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Source Code</a>
             </div>
           </div>
         </div>
 
-        <!-- Project 5 -->
+
+        <!-- Project 6: End-to-End Census Income Prediction -->
         <div class="swiper-slide">
           <div class="card">
-            <img src="images/projects/censusincome.jpg" class="card-img-top" alt="Project 3 ">
+            <img src="images/projects/censusincome.jpg" class="card-img-top" alt="Census Income Prediction" style="width: 500px; height: auto;">
             <div class="card-body">
-              <h5 class="card-title">Adult Census Income Prediction</h5>
-              <p class="card-text">Built a classification model to predict income levels based on census data, analyzing key factors like education, occupation, and work hours.</p>
-              <a href="https://censusincomeprediction.streamlit.app/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Web App</a>
-              <a href="https://github.com/sandeepbandi924/Census_Income_Prediction" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Source Code</a>
+              <h5 class="card-title">End-to-End Census Income Prediction</h5>
+              <p class="card-text">
+                Developed a machine learning pipeline to predict whether a person earns more than $50K per year. The project follows an end-to-end ML workflow with model deployment on AWS Elastic Beanstalk.
+              </p>
+              <ul class="list-unstyled">
+                <li>✅ <strong>Binary Classification:</strong> Logistic Regression model with 85% accuracy.</li>
+                <li>✅ <strong>Feature Engineering:</strong> Handled missing values, categorical encoding, and scaling.</li>
+                <li>✅ <strong>Model Deployment:</strong> Flask-based web app hosted on AWS Elastic Beanstalk.</li>
+                <li>✅ <strong>CI/CD Integration:</strong> Docker, GitHub Actions, AWS EC2, and ECR.</li>
+              </ul>
+              <a href="http://censusincome-env.eba-beuv8ifw.ap-south-1.elasticbeanstalk.com/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Web App</a>
+              <a href="https://github.com/sandeepbandi924/census-income-prediction" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Source Code</a>
             </div>
           </div>
         </div>
+
 
       </div>
 
@@ -405,50 +706,92 @@ html {
 </script>
 
 
-<!-- Education Section -->
-<section id="education" class="education-section bg-light">
-  <div class="container">
-    <h2 class="text-center">Education</h2>
-    <div class="row">
-      <!-- Education 1 -->
-      <div class="col-md-12 mb-4">
-        <div class="card p-3">
-          <div class="row no-gutters align-items-center">
-            <div class="col-md-2 text-center">
-              <img src="images/education/lpu.jpg" alt="Lovely Professional University Logo" style="width: 200px; height: auto;">
-            </div>
-            <div class="col-md-10">
-              <div class="card-body">
-                <h5 class="card-title">B.Tech in Computer Science Engineer(ML & DL)</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Lovely Professional University, Punjab</h6>
-                <p>Completed a Bachelor's degree specializing in Machine Learning and Deep Learning. Acquired expertise in AI, data science, and ML/DL algorithms, with hands-on experience in predictive modeling and NLP. Developed scalable AI-driven solutions using TensorFlow and MLOps best practices.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Education 1 -->
-      <div class="col-md-12 mb-4">
-        <div class="card p-3">
-          <div class="row no-gutters align-items-center">
-            <div class="col-md-2 text-center">
-              <img src="images/education/srichaitanya.jpg" alt="Lovely Professional University Logo" style="width: 200px; height: auto;">
+
+
+
+
+
+
+
+
+<!-- Education Section -->
+<section id="education" class="education-section bg-light py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Education</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="card shadow-lg border-0 p-4">
+          <div class="row align-items-center">
+            
+            <!-- University Logo -->
+            <div class="col-md-3 text-center">
+              <img src="images/education/lpu.jpg" alt="LPU Logo" class="img-fluid rounded-circle" style="max-width: 150px;">
             </div>
-            <div class="col-md-10">
+            
+            <!-- Education Details -->
+            <div class="col-md-9">
               <div class="card-body">
-                <h5 class="card-title">MPC (Maths, Physics, Chemistry)</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Sri Chaitanya Junior College, Hyderabad | TSBIE </h6>
-                <p>Completed my intermediate education with a strong foundation in mathematics, physics, and chemistry. Developed analytical and problem-solving skills, preparing for competitive exams in a highly focused academic environment.</p>
+                <h4 class="card-title">B.Tech in Computer Science Engineering (ML & DL)</h4>
+                <h5 class="text-primary">Lovely Professional University, Punjab</h5>
+                <p class="text-muted"><i>Graduated: 2020</i></p>
+                <p>Specialized in <strong>Machine Learning & Deep Learning</strong>, focusing on AI-driven solutions, model deployment, and large-scale data processing.</p>
+                
+                <!-- Expandable Course Details -->
+                <button class="btn btn-outline-primary mb-2" onclick="toggleDetails()">View Course Details</button>
+                <div id="course-details" class="collapse">
+                  <ul class="list-unstyled">
+                    <li>🎓 <strong>Core Subjects:</strong>Computer Science Fundamentals, ML, Deep Learning, NLP, Data Science</li>
+                    <li>🛠 <strong>Technical Skills:</strong> Python, TensorFlow, PyTorch, Scikit-Learn</li>
+                    <li>🏆 <strong>Achievements:</strong> Kaggle Competitions, AI/ML Hackathons, Research Projects</li>
+                  </ul>
+
+                  <!-- Skill Progress Bar -->
+                <h6 class="mt-3">Computer Science Fundamentals</h6>
+                <div class="progress">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 90%;">90%</div>
+                </div>
+
+                <h6 class="mt-3">Python Proficiency</h6>
+                <div class="progress">
+                  <div class="progress-bar bg-primary" role="progressbar" style="width: 85%;">85%</div>
+                </div>
+
+                <h6 class="mt-3">ML/DL Proficiency</h6>
+                <div class="progress">
+                  <div class="progress-bar bg-primary" role="progressbar" style="width: 80%;">85%</div>
+                </div>
+                </div>
+
+                
+
+                <!-- Certifications -->
+                <!-- <div class="mt-4">
+                  <h6>Certifications 📜</h6>
+                  <a href="certificate1.pdf" class="btn btn-sm btn-outline-dark" target="_blank">View ML Certificate</a>
+                  <a href="certificate2.pdf" class="btn btn-sm btn-outline-dark" target="_blank">View DL Certificate</a>
+                </div> -->
+
               </div>
             </div>
+
           </div>
         </div>
-      </div>
+      </div>  
     </div>
   </div>
 </section>
 
+<script>
+function toggleDetails() {
+    let details = document.getElementById("course-details");
+    if (details.classList.contains("collapse")) {
+        details.classList.remove("collapse");
+    } else {
+        details.classList.add("collapse");
+    }
+}
+</script>
 
 
 
@@ -456,55 +799,206 @@ html {
 <section id="skills" class="skills-section bg-white">
   <div class="container">
     <h2 class="text-center">Skills</h2>
-    <div class="skills-row">
-      <!-- Skill 1: Programming -->
-      <div class="card">
-        <img src="images/skills/python.png" class="card-img-top" alt="Python">
-        <div class="card-body">
-          <h5 class="card-title">Programming</h5>
-          <p class="card-text">Proficient in Python, R, and SQL for AI development, automation, and scalable data processing. Experienced in Flask for building and deploying web applications and APIs efficiently.</p>
-          <a href="https://www.python.org/" class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer">Learn More</a>
+    <div class="skills-carousel-container position-relative">
+      <button id="prevBtn" class="carousel-btn left-btn">&#10094;</button> <!-- Left Arrow -->
+      <div class="skills-carousel overflow-hidden">
+        <div id="skillsRow" class="d-flex flex-nowrap">
+          
+          <!-- Skill 1: Data Science & ML -->
+          <div class="card skill-card">
+            <img src="images/skills/ds_ml.webp" class="card-img-top" alt="Machine Learning">
+            <div class="card-body">
+              <h5 class="card-title">Data Science & Machine Learning</h5>
+              <p class="card-text">Proficient in <strong>Machine Learning, Deep Learning, and NLP</strong>, specializing in model development, evaluation, and deployment.</p>
+              <a href="https://scikit-learn.org/" class="btn btn-outline-primary" target="_blank">Learn More</a>
+            </div>
+          </div>
+
+          <!-- Skill 2: ML Frameworks & Modules -->
+          <div class="card skill-card">
+            <img src="images/skills/ml_frameworks.jpg" class="card-img-top" alt="ML Frameworks">
+            <div class="card-body">
+              <h5 class="card-title">ML Frameworks & Modules</h5>
+              <p class="card-text">Hands-on experience with Scikit-learn, PyTorch, Keras, NumPy, Pandas, and Transformers for building scalable ML models.</p>
+              <a href="https://scikit-learn.org/" class="btn btn-outline-primary" target="_blank">Learn More</a>
+            </div>
+          </div>
+
+          <!-- Skill 3: MLOps & CI/CD -->
+          <div class="card skill-card">
+            <img src="images/skills/ci-cd.png" class="card-img-top" alt="MLOps & CI/CD">
+            <div class="card-body">
+              <h5 class="card-title">MLOps & CI/CD</h5>
+              <p class="card-text">Expertise in DVC, MLflow, Git Actions, Jenkins, Monitoring, and Apache Airflow for model tracking, versioning, and automation.</p>
+              <a href="https://mlflow.org/" class="btn btn-outline-primary" target="_blank">Learn More</a>
+            </div>
+          </div>
+
+          <!-- Skill 4: Programming & Database Management -->
+          <div class="card skill-card">
+            <img src="images/skills/python.webp" class="card-img-top" alt="Programming & Database">
+            <div class="card-body">
+              <h5 class="card-title">Programming & DB Language</h5>
+              <p class="card-text">Skilled in Python, Flask, MySQL, and MongoDB for API development, automation, and managing structured & unstructured data.</p>
+              <a href="https://www.python.org/" class="btn btn-outline-primary" target="_blank">Learn More</a>
+            </div>
+          </div>
+
+          <!-- Skill 5: Cloud & DevOps -->
+          <div class="card skill-card">
+            <img src="images/skills/cloud.avif" class="card-img-top" alt="Cloud & DevOps">
+            <div class="card-body">
+              <h5 class="card-title">Cloud & DevOps</h5>
+              <p class="card-text">Proficient in deploying AI/ML models on AWS, GCP, and GitHub. Skilled in Docker, Kubernetes, and CI/CD automation pipelines.</p>
+              <a href="https://aws.amazon.com/" class="btn btn-outline-primary" target="_blank">Learn More</a>
+            </div>
+          </div>
+
+          <!-- Skill 6: LLM Tools & Frameworks -->
+          <div class="card skill-card">
+            <img src="images/skills/llm.jpeg" class="card-img-top" alt="LLM Tools & Frameworks">
+            <div class="card-body">
+              <h5 class="card-title">LLM Tools & Frameworks</h5>
+              <p class="card-text">Experienced in developing AI applications using LangChain, OpenAI APIs, and Hugging Face Models. Skilled in prompt engineering, fine-tuning, and deploying large language models for various NLP tasks.</p>
+              <a href="https://huggingface.co/" class="btn btn-outline-primary" target="_blank">Learn More</a>
+            </div>
+          </div>
+
         </div>
       </div>
-      <!-- Skill 2: ML, DL & Data Analysis -->
-      <div class="card">
-        <img src="images/skills/ml_dl_nlp.png" class="card-img-top" alt="ML, DL & Data Analysis">
-        <div class="card-body">
-          <h5 class="card-title">Machine Learning, Deep Learning & Data Analysis</h5>
-          <p class="card-text">Expert in Scikit-learn, TensorFlow, and Keras, with hands-on experience in ANN, CNN, RNN, and Transformers. Skilled in Pandas, NumPy, Matplotlib, and Seaborn for data preprocessing, statistical analysis, and visualization.</p>
-          <a href="https://www.tensorflow.org/" class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer">Learn More</a>
-        </div>
-      </div>
-      <!-- Skill 3: Generative AI & NLP -->
-      <div class="card">
-        <img src="images/skills/genai.jpeg" class="card-img-top" alt="Generative AI & NLP" >
-        <div class="card-body">
-          <h5 class="card-title">Generative AI & NLP</h5>
-          <p class="card-text">Experienced in LLMs, fine-tuning, and text generation using Transformer models for conversational AI and automated content creation. Strong background in tokenization, embeddings, and attention mechanisms.</p>
-          <a href="https://huggingface.co/" class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer">Learn More</a>
-        </div>
-      </div>
-      <!-- Skill 4: Big Data, MLOps & Database Management -->
-      <div class="card">
-        <img src="images/skills/Mlops.png" class="card-img-top" alt="Big Data & MLOps">
-        <div class="card-body">
-          <h5 class="card-title">Big Data, MLOps & Database Management</h5>
-          <p class="card-text">Skilled in Apache Airflow, Spark, and DVC for data pipeline automation, version control, and orchestration. Proficient in MySQL, MongoDB, and PostgreSQL for managing structured and unstructured data in AI applications.</p>
-          <a href="https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-workflow" class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer">Learn More</a>
-        </div>
-      </div>
-      <!-- Skill 5: Cloud & DevOps -->
-      <div class="card">
-        <img src="images/skills/aws1.webp" class="card-img-top" alt="AWS Cloud">
-        <div class="card-body">
-          <h5 class="card-title">Cloud & DevOps</h5>
-          <p class="card-text">Hands-on experience with AWS services like S3, EC2, Elastic Beanstalk, and SageMaker for model deployment and infrastructure scaling. Knowledge of Docker and CI/CD pipelines for seamless AI operations.</p>
-          <a href="https://aws.amazon.com/" class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer">Learn More</a>
-        </div>
-      </div>
+      <button id="nextBtn" class="carousel-btn right-btn">&#10095;</button> <!-- Right Arrow -->
     </div>
   </div>
 </section>
+
+<script>
+ document.addEventListener("DOMContentLoaded", function () {
+    const skillsRow = document.getElementById("skillsRow");
+    const skillCards = document.querySelectorAll(".skill-card");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    let index = 0;
+    const scrollInterval = 1500; // 1.5 seconds
+    const stopIndex = 2; // Stops at Skill 3 (MLOps & CI/CD)
+
+    function scrollSkills(forward = true) {
+        if (forward) {
+            if (index < stopIndex) {
+                index++;
+            } else {
+                index = 0; // Loop back to Skill 1 after reaching Skill 3
+            }
+        } else {
+            if (index > 0) {
+                index--;
+            }
+        }
+        updateCarousel();
+    }
+
+    function updateCarousel() {
+        skillsRow.style.transform = `translateX(-${index * skillCards[0].offsetWidth}px)`;
+    }
+
+    let autoScroll = setInterval(scrollSkills, scrollInterval);
+
+    function resetAutoScroll() {
+        clearInterval(autoScroll);
+        autoScroll = setInterval(scrollSkills, scrollInterval);
+    }
+
+    nextBtn.addEventListener("click", function () {
+        scrollSkills(true);
+        resetAutoScroll();
+    });
+
+    prevBtn.addEventListener("click", function () {
+        scrollSkills(false);
+        resetAutoScroll();
+    });
+});
+
+
+</script>
+
+<!-- CSS for Styling & Arrows -->
+<style>
+  .skills-carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 100%;
+  }
+
+  .skills-carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  #skillsRow {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+    width: fit-content;
+  }
+
+  .skill-card {
+    flex: 0 0 auto;
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .card-text {
+    font-size: 1rem;
+    color: #555;
+  }
+
+  .card-img-top {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+  }
+
+  .left-btn {
+    left: 10px;
+  }
+
+  .right-btn {
+    right: 10px;
+  }
+
+  .carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+</style>
+
 
 <!-- Certifications Section -->
 <section id="certifications" class="certifications-section bg-light">
@@ -586,6 +1080,7 @@ html {
 
 
 
+
 <!-- Contact Me Section -->
 <section id="contact" class="contact-section text-center text-white bg-dark">
   <div class="container">
@@ -636,37 +1131,86 @@ html {
 <!-- Sticky Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="#home">Portfolio</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="#">Portfolio</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#experience">Experience</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#projects">Projects</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#skills">Skills</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#certifications">Certificate</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
-        </li>
+        <li class="nav-item"><a class="nav-link" href="#about">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
     </div>
   </div>
 </nav>
+
+<!-- Back to Top Button -->
+<button id="backToTop" class="btn btn-primary"><i class="fas fa-arrow-up"></i></button>
+
+<!-- Smooth Scrolling & Active Highlighting -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Smooth Scrolling
+    document.querySelectorAll('a.nav-link').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            document.getElementById(targetId).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+    });
+
+    // Active Class Toggle on Scroll
+    window.addEventListener('scroll', function () {
+        let scrollPos = window.scrollY;
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            let section = document.querySelector(link.getAttribute('href'));
+            if (section.offsetTop <= scrollPos + 50 && section.offsetTop + section.offsetHeight > scrollPos) {
+                document.querySelectorAll('nav ul li a').forEach(a => a.classList.remove('active'));
+                link.classList.add('active');
+            }
+        });
+
+        // Show/Hide Back to Top Button
+        document.getElementById("backToTop").style.display = (scrollPos > 300) ? "block" : "none";
+    });
+
+    // Back to Top Button Click Event
+    document.getElementById("backToTop").addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+});
+</script>
+
+<style>
+/* Navbar Styling */
+.navbar-nav .nav-link {
+    color: white;
+    transition: color 0.3s ease;
+}
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+    color: #ffc107; /* Highlight color */
+    font-weight: bold;
+}
+
+/* Back to Top Button */
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+}
+</style>
 
 
 <!-- Bootstrap JS and dependencies (jQuery and Popper) -->
@@ -677,3 +1221,6 @@ html {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+
+
