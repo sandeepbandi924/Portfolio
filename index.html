@@ -3,128 +3,142 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sandeep Bandi</title>
+  <title>Sandeep Bandi | AI/ML Engineer</title>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Bootstrap & FontAwesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 
-  <!-- Typing animation -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
   <style>
-    :root {
-      --primary-color: #007bff;
-      --light-bg: #f8f9fa;
-      --dark-text: #343a40;
-      --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-
     body {
-      padding-top: 70px;
+      font-family: 'Segoe UI', sans-serif;
       scroll-behavior: smooth;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: var(--dark-text);
     }
 
     .navbar {
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      background-color: #1b1f23;
     }
-
-    .navbar-nav .nav-link {
-      color: white;
+    .navbar-brand, .nav-link {
+      color: #fff !important;
       font-weight: 500;
     }
-    .navbar-nav .nav-link:hover {
-      color: #e2e6ea;
-    }
 
-    /* ABOUT SECTION */
     .about-section {
-      background: linear-gradient(to bottom, var(--light-bg), #e9ecef);
       padding: 80px 0;
+      background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
     }
     .about-image {
-      width: 320px;
-      height: 320px;
-      object-fit: cover;
+      width: 280px;
+      height: 280px;
       border-radius: 50%;
-      border: 6px solid var(--primary-color);
-      box-shadow: var(--card-shadow);
-      transition: transform 0.3s ease-in-out;
+      object-fit: cover;
+      border: 6px solid #007bff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    .about-image:hover {
-      transform: scale(1.05);
-    }
+
     #typed-name {
-      font-size: 2.5rem;
+      font-size: 2.3rem;
       font-weight: 700;
     }
     #typed-role {
-      font-size: 1.4rem;
-      color: var(--primary-color);
+      font-size: 1.3rem;
+      color: #007bff;
     }
 
-    .btn-custom {
-      font-size: 1.05rem;
-      padding: 10px 24px;
-      border-radius: 6px;
+    /* Timeline */
+    .timeline {
+      position: relative;
+      border-left: 3px solid #dee2e6;
+      padding-left: 30px;
+      margin-left: 20px;
+    }
+    .timeline-block {
+      margin-bottom: 50px;
+    }
+    .timeline-icon {
+      position: absolute;
+      left: -27px;
+      top: 0;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #007bff;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+    .timeline-content {
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     }
 
-    /* Fade-in */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 768px) {
-      .about-image {
-        width: 220px;
-        height: 220px;
-        margin-bottom: 20px;
-      }
+    .company-logo {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      border-radius: 8px;
     }
   </style>
 </head>
 
+<body>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Sandeep Bandi</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon text-white"><i class="fas fa-bars"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+        <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
+        <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+        <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 <!-- ABOUT SECTION -->
-<body>
 <section id="about" class="about-section text-center">
   <div class="container">
-    <div class="row align-items-center justify-content-center">
-      
-      <!-- Image -->
-      <div class="col-lg-4 mb-4 mb-lg-0 fade-in">
-        <img src="images/about/1.jpg" alt="Sandeep Bandi" class="about-image"/>
+    <div class="row justify-content-center align-items-center">
+      <div class="col-lg-4 mb-4">
+        <img src="images/about/1.jpg" alt="Sandeep Bandi" class="about-image" />
       </div>
-
-      <!-- Content -->
-      <div class="col-lg-7 text-left fade-in">
+      <div class="col-lg-7 text-start">
         <h2><span id="typed-name"></span></h2>
-        <h4 class="mb-4"><span id="typed-role"></span></h4>
-        <p>
-          I’m a passionate <strong>AI/ML Engineer</strong> specializing in building scalable machine learning solutions and AI-powered recommendation systems.
-          With expertise in <strong>ML, Deep Learning, NLP, MLOps, and Big Data</strong>, I bring intelligent solutions to real-world problems.
+        <h4><span id="typed-role"></span></h4>
+        <p>I’m a results-driven <strong>AI/ML Engineer</strong> with a strong track record of delivering scalable machine learning and <strong>Generative AI solutions</strong> in both enterprise and startup environments.</p>
+        <p>Currently at <strong>PairSoft</strong>, I lead AI initiatives across two key products:
+          <ul>
+            <li>⚙️ Building a <strong>multi-tenant GL account prediction model</strong> using TensorFlow, MLflow, Docker — deployed on Azure.</li>
+            <li>🤖 Designing a <strong>GenAI-powered invoice–PO matching system</strong> using LangChain and LLM APIs.</li>
+          </ul>
         </p>
-        <p>
-          I work extensively with <strong>Python, TensorFlow, Scikit-learn, LangChain, OpenAI, Hugging Face, and LLMs</strong>.
-          My MLOps experience spans <strong>MLflow, Docker, Kubernetes, CI/CD (GitHub Actions, Jenkins), AWS & GCP</strong> deployments.
+
+        <p>My toolkit includes Python, Scikit-learn, Hugging Face, LangChain, OpenAI — and I’m experienced in <strong>cloud-native deployments</strong> using Docker, Kubernetes, and CI/CD tools across AWS & GCP.</p>
+
+        <p>Previously:
+          <ul>
+            <li>🚀I Engineered <strong>personalized recommendation systems</strong> at BeWorld boosted engagement by <strong>15%</strong>.</li>
+            <li>📈 Optimized ML pipelines at <strong>TCS</strong> for <strong>Prudential Insurance</strong>.</li>
+            <li>🔬 As a freelancer, collaborated on research-focused <strong>NLP projects</strong> involving LLM fine-tuning and GenAI-based document Q&A systems.</li>
+          </ul>
         </p>
-        <p>
-          I’m driven by curiosity, continuous learning, and solving complex problems through data and AI.
-        </p>
-        
-        <!-- Buttons -->
-        <div class="mt-4">
-          <a href="#contact" class="btn btn-primary btn-custom mr-2">Get in Touch</a>
-          <a href="images/resume/Sandeep_Resume.pdf" target="_blank" class="btn btn-outline-dark btn-custom">
-            <i class="fas fa-file-arrow-down mr-2"></i>Resume
+
+        <div class="mt-3">
+          <a href="#contact" class="btn btn-primary me-3">Get in Touch</Sa>
+          <a href="images/resume/Sandeep_Resume.pdf" target="_blank" class="btn btn-outline-dark">
+            <i class="fas fa-file-download me-2"></i>Resume
           </a>
         </div>
       </div>
@@ -132,539 +146,301 @@
   </div>
 </section>
 
-<!-- TYPED JS & FADE-IN -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    new Typed("#typed-name", {
-      strings: ["Sandeep Bandi"],
-      typeSpeed: 100,
-      showCursor: false
-    });
-
-    new Typed("#typed-role", {
-      strings: ["AI/ML Engineer", "Deep Learning Specialist", "MLOps Practitioner"],
-      typeSpeed: 80,
-      backSpeed: 50,
-      backDelay: 2000,
-      loop: true
-    });
-
-    const fadeInElements = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.3 });
-
-    fadeInElements.forEach(el => observer.observe(el));
-  });
-</script>
-</body>
-
-
-
-
-
-<!-- Experience Section -->
-<section id="experience" class="experience-section py-5 bg-light">
+<!-- EXPERIENCE -->
+<section id="experience" class="py-5 bg-white">
   <div class="container">
     <h2 class="text-center mb-5 fw-bold">👨🏻‍💻 Experience</h2>
+    <div class="timeline">
 
-    <!-- Experience Carousel -->
-    <div id="experienceCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-
-        <!-- Experience 1: BeWorld Web Services -->
-        <div class="carousel-item active">
-          <div class="experience-card beworld">
-            <div class="row align-items-center">
-              <div class="col-md-2 text-center">
-                <img src="images/experience/beworld.png" class="company-logo" alt="Beworld Logo">
-              </div>
-              <div class="col-md-10">
-                <h4>AI/ML Engineer</h4>
-                <h6 class="text-muted">Beworld Web Services, Hyderabad</h6>
-                <p>Developed personalized recommendation systems and optimized ML pipelines.</p>
-
-                <button class="btn btn-outline-light btn-sm toggle-details" data-bs-target="#beworld-details">View More</button>
-                <div class="collapse mt-2 experience-details" id="beworld-details">
-                  <ul>
-                    <li>Developed & optimized a feed algorithm to create personalized user interest feeds, improving engagement and content relevance.</li>
-                    <li>Implemented machine learning models for recommendation systems, leveraging user interaction analysis to enhance content ranking.</li>
-                    <li>Worked with Python, TensorFlow, Scikit-learn, and NLP techniques to develop AI-driven intelligent solutions.</li>
-                    <li>Built scalable backend services with Flask, MongoDB, and Python, deploying ML models on AWS using automated CI/CD pipelines.</li>
-                    <li>Collaborated with cross-functional teams to integrate AI-driven recommendations into real-world applications, boosting user engagement.</li>
-                  </ul>
-                  <div class="skill-bars">
-                    <p>Python</p>
-                    <div class="progress"><div class="progress-bar" style="width: 90%;"></div></div>
-                    <p>Machine Learning</p>
-                    <div class="progress"><div class="progress-bar" style="width: 85%;"></div></div>
-                    <p>AWS</p>
-                    <div class="progress"><div class="progress-bar" style="width: 80%;"></div></div>
-                  </div>
-                  <p class="font-italic">💡 Passionate about AI, MLOps, and scalable intelligent systems—driving impactful innovations through data and technology.</p>
-                </div>
-              </div>
+      <!-- PairSoft -->
+      <div class="timeline-block">
+        <div class="row">
+          <div class="col-md-1 text-center">
+            <img src="images/experience/pairsoft.png" class="company-logo" alt="PairSoft Logo">
+          </div>
+          <div class="col-md-11">
+            <div class="timeline-icon"><i class="fas fa-robot"></i></div>
+            <div class="timeline-content">
+              <h4>MLOps Engineer</h4>
+              <h6 class="text-muted">PairSoft, Remote</h6>
+              <span class="text-muted small">2024 – Present</span>
+              <ul class="mt-2">
+                <li>Built multi-tenant GL prediction models using MLflow & TensorFlow.</li>
+                <li>Led GenAI-powered invoice–PO matching using LangChain & OpenAI.</li>
+                <li>Deployed models via Docker, Kubernetes & CI/CD pipelines on AWS.</li>
+              </ul>
             </div>
           </div>
         </div>
-
-        <!-- Experience 2: TCS -->
-        <div class="carousel-item">
-          <div class="experience-card tcs">
-            <div class="row align-items-center">
-              <div class="col-md-2 text-center">
-                <img src="images/experience/tcs.png" class="company-logo" alt="TCS Logo">
-              </div>
-              <div class="col-md-10">
-                <h4>ML Engineer</h4>
-                <h6 class="text-muted">Tata Consultancy Services (TCS), Hyderabad</h6>
-                <p>Built ML models for risk assessment and fraud detection in insurance.</p>
-
-                <button class="btn btn-outline-light btn-sm toggle-details" data-bs-target="#tcs-details">View More</button>
-                <div class="collapse mt-2 experience-details" id="tcs-details">
-                  <ul>
-                    <li>Developed machine learning models for risk assessment, fraud detection, and customer segmentation in the insurance domain.</li>
-                    <li>Built and deployed predictive analytics solutions to improve policyholder risk evaluation and underwriting efficiency.</li>
-                    <li>Worked with Python, Scikit-learn, TensorFlow, and NLP techniques to extract insights from structured and unstructured insurance data.</li>
-                    <li>Designed data pipelines for handling large-scale insurance datasets using Apache Spark, Airflow, and SQL-based databases.</li>
-                    <li>Implemented MLOps best practices with MLflow, Docker, Kubernetes, and Jenkins CI/CD pipelines for scalable model deployment.</li>
-                    <li>Collaborated with data scientists, actuaries, and business teams to align AI-driven solutions with insurance risk and compliance requirements.</li>
-                  </ul>
-                  <div class="skill-bars">
-                    <p>Python</p>
-                    <div class="progress"><div class="progress-bar" style="width: 95%;"></div></div>
-                    <p>Data Processing</p>
-                    <div class="progress"><div class="progress-bar" style="width: 80%;"></div></div>
-                    <p>Model Training</p>
-                    <div class="progress"><div class="progress-bar" style="width: 75%;"></div></div>
-                  </div>
-                  <p class="font-italic">💡 Leveraging AI/ML to drive innovation in insurance—enhancing risk evaluation, fraud detection, and customer insights through data-driven solutions.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Experience 3: iNeuron.ai Internship -->
-        <div class="carousel-item">
-          <div class="experience-card ineuron">
-            <div class="row align-items-center">
-              <div class="col-md-2 text-center">
-                <img src="images/certifications/ineuron.jpg" class="company-logo" alt="iNeuron Logo">
-              </div>
-              <div class="col-md-10">
-                <h4>Project Intern</h4>
-                <h6 class="text-muted">iNeuron.ai</h6>
-                <p>Developed a machine learning system for income price prediction.</p>
-
-                <button class="btn btn-outline-light btn-sm toggle-details" data-bs-target="#ineuron-details">View More</button>
-                <div class="collapse mt-2 experience-details" id="ineuron-details">
-                  <ul>
-                    <li>📊 <strong>Key Stages:</strong> Data Ingestion, EDA, Data Transformation, Model Training & Prediction Pipelines, Model Deployment</li>
-                    <li>🛠 <strong>Tech Stack:</strong> Python, VS Code, GitHub, Docker, AWS</li>
-                    <li>🚀 <strong>Impact:</strong> Hands-on experience in end-to-end ML project implementation.</li>
-                  </ul>
-                  <a href="images/intern/ineuron_intern.pdf" class="btn btn-sm btn-outline-light" target="_blank">View Internship Certificate</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
 
-      <!-- Carousel Controls -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#experienceCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#experienceCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </button>
+      <!-- BeWorld -->
+      <div class="timeline-block">
+        <div class="row">
+          <div class="col-md-1 text-center">
+            <img src="images/experience/beworld.png" class="company-logo" alt="BeWorld Logo">
+          </div>
+          <div class="col-md-11">
+            <div class="timeline-icon bg-dark"><i class="fas fa-lightbulb"></i></div>
+            <div class="timeline-content">
+              <h4>AI/ML Engineer</h4>
+              <h6 class="text-muted">BeWorld Web Services, Hyderabad</h6>
+              <span class="text-muted small">2023 – 2024</span>
+              <ul class="mt-2">
+                <li>Developed a feed algorithm improving engagement by 15%.</li>
+                <li>Built ML pipelines using Python, MongoDB, TensorFlow.</li>
+                <li>Deployed ML APIs using Flask on AWS with CI/CD.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TCS -->
+      <div class="timeline-block">
+        <div class="row">
+          <div class="col-md-1 text-center">
+            <img src="images/experience/tcs.png" class="company-logo" alt="TCS Logo">
+          </div>
+          <div class="col-md-11">
+            <div class="timeline-icon bg-info"><i class="fas fa-building"></i></div>
+            <div class="timeline-content">
+              <h4>ML Engineer</h4>
+              <h6 class="text-muted">TCS, Hyderabad</h6>
+              <span class="text-muted small">2021 – 2023</span>
+              <ul class="mt-2">
+                <li>Built ML models for risk profiling and fraud detection.</li>
+                <li>Worked on data pipelines with SQL, Spark, Pandas.</li>
+                <li>Integrated MLflow, Jenkins, Docker into model lifecycle.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- iNeuron -->
+      <div class="timeline-block">
+        <div class="row">
+          <div class="col-md-1 text-center">
+            <img src="images/certifications/ineuron.jpg" class="company-logo" alt="iNeuron Logo">
+          </div>
+          <div class="col-md-11">
+            <div class="timeline-icon bg-success"><i class="fas fa-graduation-cap"></i></div>
+            <div class="timeline-content">
+              <h4>ML Intern</h4>
+              <h6 class="text-muted">iNeuron.ai</h6>
+              <span class="text-muted small">2020</span>
+              <ul class="mt-2">
+                <li>Built end-to-end income classification pipeline with Flask + AWS.</li>
+                <li>Used GitHub Actions, Docker, and VS Code for deployment.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- JavaScript for Auto-Scrolling and Toggle Buttons -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  setInterval(() => {
-    const carousel = bootstrap.Carousel.getOrCreateInstance(document.querySelector("#experienceCarousel"));
-    carousel.next();
-  }, 6000);
 
-  document.querySelectorAll('.toggle-details').forEach(button => {
-    button.addEventListener('click', function () {
-      const targetId = this.getAttribute('data-bs-target');
-      const target = document.querySelector(targetId);
-      const bsCollapse = bootstrap.Collapse.getOrCreateInstance(target);
-      if (target.classList.contains('show')) {
-        bsCollapse.hide();
-        this.textContent = 'View More';
-      } else {
-        bsCollapse.show();
-        this.textContent = 'View Less';
-      }
-    });
-  });
-});
-</script>
-
-<!-- CSS for Styling -->
-<style>
-.experience-card {
-  padding: 20px;
-  border-radius: 10px;
-  color: white;
-  transition: transform 0.3s ease-in-out;
-}
-.experience-card:hover {
-  transform: translateY(-5px);
-}
-.beworld { background: linear-gradient(135deg, #c31432,#240b36); }
-.tcs { background: linear-gradient(135deg, #1e3c72,  #2a5298); }
-.ineuron { background: linear-gradient(135deg, #283c86, #45a247); }
-
-.company-logo {
-  width: 80px;
-  height: auto;
-  transition: transform 0.3s ease-in-out;
-}
-.company-logo:hover { transform: scale(1.1); }
-
-.skill-bars p { margin-bottom: 5px; }
-.progress {
-  height: 8px;
-  background-color: rgba(255, 255, 255, 0.2);
-}
-.progress-bar { background-color: white; }
-</style>
-
-
-
-
-
-<!-- Education Section -->
-<section id="education" class="education-section bg-light py-5">
+<!-- Projects Section -->
+<section id="projects" class="bg-light py-5">
   <div class="container">
-    <h2 class="text-center mb-5 fw-bold">🎓 Education</h2>
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
-        <div class="card shadow border-0 rounded-4 overflow-hidden">
-          <div class="row g-0">
-            <!-- University Logo -->
-            <div class="col-md-4 bg-white text-center p-5">
-              <img src="images/education/lpu.jpg" alt="LPU Full Logo" class="img-fluid center" style="max-height: 150px;">
+    <h2 class="text-center mb-5 fw-bold">🎯 Projects</h2>
+
+    <!-- Swiper Container -->
+    <div class="swiper projectSwiper">
+      <div class="swiper-wrapper">
+
+        <!-- Project 1 -->
+        <div class="swiper-slide">
+          <div class="card shadow-lg h-100 d-flex flex-column" style="max-width: 360px;">
+            <div class="project-image-wrapper">
+              <img src="images/projects/hotel.jpg" class="card-img-top" alt="Hotel Reservation">
             </div>
-            <!-- <div class="col-md-4 bg-white d-flex justify-content-center align-items-center p-4">
-              <img src="images/education/lpu.jpg" alt="LPU Logo" class="img-fluid rounded-circle shadow" style="max-width: 140px;">
-            </div> -->
-
-            <!-- Education Details -->
-            <div class="col-md-8">
-              <div class="card-body p-4">
-                <h4 class="fw-semibold">B.Tech in Computer Science Engineering (ML & DL)</h4>
-                <h5 class="text-primary mb-2">Lovely Professional University, Punjab</h5>
-                <p class="text-muted mb-2"><i>Graduated: 2020</i></p>
-                <p>Specialized in <strong>Machine Learning & Deep Learning</strong>, with a strong foundation in AI-driven systems, scalable deployments, and real-world ML applications.</p>
-
-                <!-- Toggle Button -->
-                <button class="btn btn-sm btn-outline-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#courseDetails" aria-expanded="false" aria-controls="courseDetails">
-                  View Course Details
-                </button>
-
-                <!-- Expandable Course Details -->
-                <div class="collapse" id="courseDetails">
-                  <ul class="list-unstyled mb-4">
-                    <li>📘 <strong>Core Subjects:</strong> Data Structures, Algorithms, ML, DL, NLP, Data Science</li>
-                    <li>🛠 <strong>Technical Stack:</strong> Python, TensorFlow, PyTorch, Scikit-Learn, SQL</li>
-                    <li>🏆 <strong>Achievements:</strong> Kaggle Competitions, AI Hackathons, Published Projects</li>
-                  </ul>
-
-                  <!-- Skill Progress Bars -->
-                  <div class="mb-3">
-                    <h6 class="mb-1">Computer Science Fundamentals</h6>
-                    <div class="progress mb-2">
-                      <div class="progress-bar bg-success" style="width: 90%">90%</div>
-                    </div>
-
-                    <h6 class="mb-1">Python Proficiency</h6>
-                    <div class="progress mb-2">
-                      <div class="progress-bar bg-info" style="width: 85%">85%</div>
-                    </div>
-
-                    <h6 class="mb-1">ML/DL Proficiency</h6>
-                    <div class="progress">
-                      <div class="progress-bar bg-primary" style="width: 85%">85%</div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Optional Certifications -->
-                <!-- <div class="mt-4">
-                  <h6>Certifications 📜</h6>
-                  <a href="certificate1.pdf" class="btn btn-sm btn-outline-dark me-2" target="_blank">ML Certificate</a>
-                  <a href="certificate2.pdf" class="btn btn-sm btn-outline-dark" target="_blank">DL Certificate</a>
-                </div> -->
-                
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Hotel Reservation Cancellation Prediction</h5>
+              <p class="card-text">AI system predicting cancellations using LightGBM & Streamlit, deployed via GCP.</p>
+              <ul class="list-unstyled small">
+                <li>✅ ETL Pipeline & Feature Engineering</li>
+                <li>✅ LightGBM Training & Evaluation</li>
+                <li>✅ Docker + CI/CD on GCP Run</li>
+              </ul>
+              <div class="mt-auto d-flex justify-content-between">
+                <a href="https://hotelreservation.streamlit.app/" class="btn btn-primary btn-sm" target="_blank">Web App</a>
+                <a href="https://github.com/sandeepbandi924/Hotel_Reservation_Prediction" class="btn btn-secondary btn-sm" target="_blank">Code</a>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- Project 2 -->
+        <div class="swiper-slide">
+          <div class="card shadow-lg h-100 d-flex flex-column" style="max-width: 360px;">
+            <div class="project-image-wrapper">
+              <img src="images/projects/anime.avif" class="card-img-top" alt="Anime Recommendation System">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Hybrid Anime Recommendation System</h5>
+              <p class="card-text">Combined collaborative and content-based filtering for anime suggestions.</p>
+              <ul class="list-unstyled small">
+                <li>✅ Hybrid Model & Personalization</li>
+                <li>✅ Scalable Pipeline in Python</li>
+                <li>✅ Flask API Integration</li>
+              </ul>
+              <div class="mt-auto d-flex justify-content-between">
+                <a href="https://animerecommedationsystem.streamlit.app/" class="btn btn-primary btn-sm">Web App</a>
+                <a href="https://github.com/sandeepbandi924/Anime-Recommendation-System" class="btn btn-secondary btn-sm">Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="swiper-slide">
+          <div class="card shadow-lg h-100 d-flex flex-column" style="max-width: 360px;">
+            <div class="project-image-wrapper">
+              <img src="images/projects/network.jpg" class="card-img-top" alt="Network Security">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Network Security</h5>
+              <p class="card-text">AI pipeline for detecting network intrusions in real-time with FastAPI.</p>
+              <ul class="list-unstyled small">
+                <li>✅ Cleaned and transformed logs</li>
+                <li>✅ Supervised anomaly detection</li>
+                <li>✅ Integrated with FastAPI</li>
+              </ul>
+              <div class="mt-auto d-flex justify-content-between">
+                <a href="https://networksecurity.streamlit.app/" class="btn btn-primary btn-sm" target="_blank">Web App</a>
+                <a href="https://github.com/sandeepbandi924/End_To_End_ML_Project_NetworkSecurity" class="btn btn-secondary btn-sm" target="_blank">Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="swiper-slide">
+          <div class="card shadow-lg h-100 d-flex flex-column" style="max-width: 360px;">
+            <div class="project-image-wrapper">
+              <img src="images/projects/winequality.jpg" class="card-img-top" alt="Wine Quality Prediction">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Wine Quality Prediction</h5>
+              <p class="card-text">Predicted wine quality using chemical analysis and ensemble ML models.</p>
+              <ul class="list-unstyled small">
+                <li>✅ XGBoost, RF, GBoost Models</li>
+                <li>✅ Feature Engineering & Evaluation</li>
+                <li>✅ Flask + Streamlit Deployment</li>
+              </ul>
+              <div class="mt-auto d-flex justify-content-between">
+                <a href="https://winequalitypred.streamlit.app/" class="btn btn-primary btn-sm">Web App</a>
+                <a href="https://github.com/sandeepbandi924/End-to-End-Wine-Quality-Prediction" class="btn btn-secondary btn-sm">Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="swiper-slide">
+          <div class="card shadow-lg h-100 d-flex flex-column" style="max-width: 360px;">
+            <div class="project-image-wrapper">
+              <img src="images/projects/customerchurn.jpg" class="card-img-top" alt="Churn Prediction">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">ANN Churn Prediction</h5>
+              <p class="card-text">Built a churn classification system using TensorFlow with 92% accuracy.</p>
+              <ul class="list-unstyled small">
+                <li>✅ ANN with ReLU & Sigmoid</li>
+                <li>✅ TensorFlow + Keras</li>
+                <li>✅ Real-time deployment</li>
+              </ul>
+              <div class="mt-auto d-flex justify-content-between">
+                <a href="https://annchurnprediction.streamlit.app/" class="btn btn-primary btn-sm">Web App</a>
+                <a href="https://github.com/sandeepbandi924/ANN-Churn-Prediction" class="btn btn-secondary btn-sm">Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="swiper-slide">
+          <div class="card shadow-lg h-100 d-flex flex-column" style="max-width: 360px;">
+            <div class="project-image-wrapper">
+              <img src="images/projects/gemstone.jpg" class="card-img-top" alt="Gemstone Prediction">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Gemstone Prediction</h5>
+              <p class="card-text">ML model predicting gemstone types; deployed on AWS Lambda + API Gateway.</p>
+              <ul class="list-unstyled small">
+                <li>✅ Flask + AWS Lambda</li>
+                <li>✅ Scikit-learn modeling</li>
+                <li>✅ API Gateway Deployment</li>
+              </ul>
+              <div class="mt-auto d-flex justify-content-between">
+                <a href="https://gemstonepricepredict.streamlit.app/" class="btn btn-primary btn-sm">Web App</a>
+                <a href="https://github.com/sandeepbandi924/Gemstone_prediction_Aws1" class="btn btn-secondary btn-sm">Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 7 -->
+        <div class="swiper-slide">
+          <div class="card shadow-lg h-100 d-flex flex-column" style="max-width: 360px;">
+            <div class="project-image-wrapper">
+              <img src="images/projects/soiltemp.avif" class="card-img-top" alt="Soil Temp Prediction">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Weather Prediction Using ANN</h5>
+              <p class="card-text">ANN-based temperature prediction at soil depths with GitHub CI/CD & Streamlit.</p>
+              <ul class="list-unstyled small">
+                <li>✅ Region-specific models</li>
+                <li>✅ GitHub Actions CI/CD</li>
+                <li>✅ Interactive Streamlit UI</li>
+              </ul>
+              <div class="mt-auto d-flex justify-content-between">
+                <a href="https://soiltemperatureprediction.streamlit.app/" class="btn btn-primary btn-sm">Web App</a>
+                <a href="https://github.com/sandeepbandi924/weather-prediction-model" class="btn btn-secondary btn-sm">Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 8 -->
+        <div class="swiper-slide">
+          <div class="card shadow-lg h-100 d-flex flex-column" style="max-width: 360px;">
+            <div class="project-image-wrapper">
+              <img src="images/projects/censusincome.jpg" class="card-img-top" alt="Census Income Prediction">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Census Income Prediction</h5>
+              <p class="card-text">Predicted income class using Logistic Regression, deployed with Docker & AWS.</p>
+              <ul class="list-unstyled small">
+                <li>✅ Logistic Regression</li>
+                <li>✅ AWS Elastic Beanstalk</li>
+                <li>✅ CI/CD via GitHub Actions</li>
+              </ul>
+              <div class="mt-auto d-flex justify-content-between">
+                <a href="https://censusincomeprediction.streamlit.app/" class="btn btn-primary btn-sm">Web App</a>
+                <a href="https://github.com/sandeepbandi924/census-income-prediction" class="btn btn-secondary btn-sm">Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
+
+      <!-- Swiper Controls -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination mt-3"></div>
     </div>
   </div>
 </section>
 
 
-
-
-
-<!-- Projects-->
-
-<!-- <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Projects Showcase</title>  -->
-
-<!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<!-- Swiper CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
-
-<style>
-  body {
-    background-color: #f8f9fa;
-  }
-
-  h2 {
-    font-weight: 700;
-  }
-
-  .swiper {
-    padding: 50px 0;
-  }
-
-  .card {
-    height: 100%;
-    transition: transform 0.4s ease-in-out;
-  }
-
-  .card:hover {
-    transform: translateY(-8px);
-  }
-
-  .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-  }
-
-  .btn {
-    width: 48%;
-  }
-
-  .swiper-button-next, .swiper-button-prev {
-    color: #007bff;
-  }
-
-  .swiper-pagination-bullet-active {
-    background: #007bff;
-  }
-</style>
-
-<body>
-<section id="projects" class="container">
-  <h2 class="text-center mb-5 fw-bold">🎯 Projects</h2>
-
-  <div class="swiper projectSwiper">
-    <div class="swiper-wrapper">
-
-      <!-- Project 1 -->
-      <div class="swiper-slide">
-        <div class="card shadow-lg" style="width: 100%; max-width: 360px;">
-          <img src="images/projects/hotel.jpg" class="card-img-top" alt="Hotel Reservation">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Hotel Reservation Cancellation Prediction</h5>
-            <p class="card-text">Built an AI-powered system to predict hotel reservation cancellations using advanced machine learning techniques and cloud-based deployment.</p>
-            <ul class="list-unstyled mb-3">
-              <li>✅ <strong>ETL Pipeline:</strong> Automated data preprocessing and transformation.</li>
-              <li>✅ <strong>ML Model Training:</strong> Developed models using LightGBM.</li>
-              <li>✅ <strong>Web App:</strong> Deployed a user-friendly interface using Streamlit.</li>
-              <li>✅ <strong>Deployment:</strong> Implemented CI/CD with Docker, Jenkins & GCP Run.</li>
-            </ul>
-            <div class="mt-auto d-flex justify-content-between">
-              <a href="https://hotelreservation.streamlit.app/" class="btn btn-primary" target="_blank">Web App</a>
-              <a href="https://github.com/sandeepbandi924/Hotel_Reservation_Prediction" class="btn btn-secondary" target="_blank">Code</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Project 2-->
-      <div class="swiper-slide">
-        <div class="card shadow-lg" style="width: 100%; max-width: 360px;">
-          <img src="images/projects/anime.avif" class="card-img-top" alt="Anime Recommendation System">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Hybrid Anime Recommendation System</h5>
-            <p class="card-text">Built a hybrid recommendation system that combines collaborative filtering and content-based approaches to suggest anime titles to users based on their viewing history and preferences.</p>
-            <ul class="list-unstyled">
-              <li>✅ <strong>Hybrid Model:</strong> Combines collaborative filtering and content-based filtering.</li>
-              <li>✅ <strong>Personalized Results:</strong> Tailored recommendations using user-item interaction matrix and metadata.</li>
-              <li>✅ <strong>Scalable Pipeline:</strong> Modular architecture using Python with clean ML pipeline practices.</li>
-              <li>✅ <strong>Deployment Ready:</strong> Flask backend designed to be easily integrated with web apps.</li>
-            </ul>
-            <div class="mt-auto d-flex justify-content-between">
-              <a href="https://animerecommedationsystem.streamlit.app/" class="btn btn-primary">Web App</a>
-              <a href="https://github.com/sandeepbandi924/Anime-Recommendation-System" class="btn btn-secondary">Code</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-
-      <!-- Project 2 -->
-      <div class="swiper-slide">
-        <div class="card shadow-lg" style="width: 100%; max-width: 360px;">
-          <img src="images/projects/network.jpg" class="card-img-top" alt="Network Security">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Network Security</h5>
-            <p class="card-text">Developed a robust ML pipeline to detect cyber threats and unauthorized network access in real-time using AI-driven security analytics.</p>
-            <ul class="list-unstyled mb-3">
-              <li>✅ <strong>Data Processing:</strong> Cleaned and transformed network traffic logs.</li>
-              <li>✅ <strong>Feature Engineering:</strong> Extracted key network attributes for anomaly detection.</li>
-              <li>✅ <strong>ML Model Training:</strong> Built supervised models for cybersecurity threat detection.</li>
-              <li>✅ <strong>Deployment:</strong> Integrated with FastAPI for scalable real-time analysis.</li>
-            </ul>
-            <div class="mt-auto d-flex justify-content-between">
-              <a href="https://networksecurity.streamlit.app/" class="btn btn-primary" target="_blank">Web App</a>
-              <a href="https://github.com/sandeepbandi924/End_To_End_ML_Project_NetworkSecurity" class="btn btn-secondary" target="_blank">Code</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="swiper-slide">
-        <div class="card shadow-lg" style="width: 100%; max-width: 360px;">
-          <img src="images/projects/winequality.jpg" class="card-img-top" alt="Wine Quality Prediction">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Wine Quality Prediction</h5>
-            <p class="card-text">Built a machine learning model to predict wine quality based on key chemical properties, improving accuracy through feature engineering and hyperparameter tuning.</p>
-            <ul class="list-unstyled mb-3">
-              <li>✅ <strong>Data Processing:</strong> Cleaned, preprocessed, and handled missing values.</li>
-              <li>✅ <strong>Feature Engineering:</strong> Selected key attributes for optimal model performance.</li>
-              <li>✅ <strong>Model Training:</strong> Implemented Random Forest, XGBoost & Gradient Boosting.</li>
-              <li>✅ <strong>Deployment:</strong> Developed a scalable web app using Flask & Streamlit.</li>
-            </ul>
-            <div class="mt-auto d-flex justify-content-between">
-              <a href="https://winequalitypred.streamlit.app/" class="btn btn-primary ">Web App</a>
-              <a href="https://github.com/sandeepbandi924/End-to-End-Wine-Quality-Prediction" class="btn btn-secondary">Code</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 4 -->
-      <div class="swiper-slide">
-        <div class="card shadow-lg" style="width: 100%; max-width: 360px;">
-          <img src="images/projects/customerchurn.jpg" class="card-img-top" alt="Wine Quality Prediction">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">ANN Churn Prediction</h5>
-            <p class="card-text">Developed an Artificial Neural Network (ANN) model to predict customer churn, helping businesses retain at-risk customers and optimize retention strategies.</p>
-            <ul class="list-unstyled">
-              <li>✅ <strong>Data Processing:</strong> Preprocessed customer data, handled missing values, and encoded categorical features.</li>
-              <li>✅ <strong>Model Development:</strong> Built an ANN with TensorFlow/Keras using ReLU and sigmoid activations.</li>
-              <li>✅ <strong>Performance:</strong> Achieved 92% accuracy with optimized hyperparameters.</li>
-              <li>✅ <strong>Deployment:</strong> Deployed a real-time churn prediction web app using Streamlit.</li>
-            </ul>
-            <div class="mt-auto d-flex justify-content-between">
-              <a href="https://annchurnprediction.streamlit.app/" class="btn btn-primary">Web App</a>
-              <a href="https://github.com/sandeepbandi924/ANN-Churn-Prediction" class="btn btn-secondary">Code</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 5 -->
-      <div class="swiper-slide">
-        <div class="card shadow-lg" style="width: 100%; max-width: 360px;">
-          <img src="images/projects/gemstone.jpg" class="card-img-top" alt="Wine Quality Prediction">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Gemstone Prediction</h5>
-            <p class="card-text">Developed a machine learning model to predict gemstone types based on key features, deployed on AWS for cloud-based inference.</p>
-            <ul class="list-unstyled">
-              <li>✅ <strong>Data Processing:</strong> Cleaned and preprocessed gemstone datasets for feature extraction.</li>
-              <li>✅ <strong>Model Training:</strong> Implemented ML models using Scikit-Learn and fine-tuned for high accuracy.</li>
-              <li>✅ <strong>AWS Deployment:</strong> Deployed using AWS Lambda and API Gateway for scalable cloud-based predictions.</li>
-              <li>✅ <strong>API Integration:</strong> Built a Flask backend to serve predictions via API endpoints.</li>
-            </ul>
-            <div class="mt-auto d-flex justify-content-between">
-              <a href="https://gemstonepricepredict.streamlit.app/" class="btn btn-primary ">Web App</a>
-              <a href="https://github.com/sandeepbandi924/Gemstone_prediction_Aws1" class="btn btn-secondary">Code</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 6 -->
-      <div class="swiper-slide">
-        <div class="card shadow-lg" style="width: 100%; max-width: 360px;">
-          <img src="images/projects/soiltemp.avif" class="card-img-top" alt="Wine Quality Prediction">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Weather Prediction Model Using ANN</h5>
-            <p class="card-text"> Built an interactive web application using ANN to predict temperature at different soil depths based on weather parameters. Deployed via Streamlit with CI/CD integration using GitHub Actions.</p>
-            <ul class="list-unstyled">
-              <li>✅ <strong>ANN Model:</strong> Predicts temperature based on air temperature, rainfall, and day of the year.</li>
-              <li>✅ <strong>Streamlit UI:</strong> Interactive web app for user-friendly experience.</li>
-              <li>✅ <strong>Multi-Region Support:</strong> Trained models for Texas & New York datasets.</li>
-              <li>✅ <strong>CI/CD Integration:</strong> Automated deployment via GitHub Actions.</li>
-            </ul>
-            <div class="mt-auto d-flex justify-content-between">
-              <a href="https://soiltemperatureprediction.streamlit.app/" class="btn btn-primary ">Web App</a>
-              <a href="https://github.com/sandeepbandi924/weather-prediction-model" class="btn btn-secondary">Code</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 7 -->
-      <div class="swiper-slide">
-        <div class="card shadow-lg" style="width: 100%; max-width: 360px;">
-          <img src="images/projects/censusincome.jpg" class="card-img-top" alt="Wine Quality Prediction">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">End-to-End Census Income Prediction</h5>
-            <p class="card-text">Developed a machine learning pipeline to predict whether a person earns more than $50K per year. The project follows an end-to-end ML workflow with model deployment on AWS Elastic Beanstalk.</p>
-            <ul class="list-unstyled">
-              <li>✅ <strong>Binary Classification:</strong> Logistic Regression model with 85% accuracy.</li>
-              <li>✅ <strong>Feature Engineering:</strong> Handled missing values, categorical encoding, and scaling.</li>
-              <li>✅ <strong>Model Deployment:</strong> Flask-based web app hosted on AWS Elastic Beanstalk.</li>
-              <li>✅ <strong>CI/CD Integration:</strong> Docker, GitHub Actions, AWS EC2, and ECR.</li>
-            </ul>
-            <div class="mt-auto d-flex justify-content-between">
-              <a href="https://censusincomeprediction.streamlit.app/" class="btn btn-primary ">Web App</a>
-              <a href="https://github.com/sandeepbandi924/census-income-prediction" class="btn btn-secondary ">Code</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- You can copy and paste more .swiper-slide blocks for additional projects -->
-
-    </div>
-
-    <!-- Navigation buttons -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    <!-- Pagination -->
-    <div class="swiper-pagination mt-3"></div>
-  </div>
-</div>
-</section>
-</body>
-<!-- Bootstrap + Swiper JS -->
+<!-- Swiper & Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
@@ -673,7 +449,7 @@ document.addEventListener("DOMContentLoaded", function () {
     loop: true,
     grabCursor: true,
     autoplay: {
-      delay: 2000,
+      delay: 2500,
       disableOnInteraction: false,
     },
     pagination: {
@@ -686,10 +462,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     keyboard: {
       enabled: true,
-      onlyInViewport: true,
     },
-    speed: 600,
-    effect: "slide", // Options: "slide", "fade", "cube", "coverflow", "flip"
     breakpoints: {
       640: { slidesPerView: 1, spaceBetween: 20 },
       768: { slidesPerView: 2, spaceBetween: 30 },
@@ -697,6 +470,110 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 </script>
+
+<!-- Swiper + Custom Styles -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<style>
+  #projects .card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out;
+  }
+  #projects .card:hover {
+    transform: translateY(-6px);
+  }
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+  .swiper-button-next, .swiper-button-prev {
+    color: #007bff;
+  }
+  .swiper-pagination-bullet-active {
+    background: #007bff;
+  }
+
+  /* Fixed image height and fit */
+  .project-image-wrapper {
+    height: 200px;
+    overflow: hidden;
+  }
+  .project-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
+
+
+
+
+<!-- EDUCATION -->
+<section id="education" class="education-section bg-light py-5">
+  <div class="container">
+    <h2 class="text-center mb-5 fw-bold">🎓 Education</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="card shadow border-0 rounded-4 overflow-hidden">
+          <div class="row g-0">
+            <div class="col-md-4 bg-white text-center p-5">
+              <img src="images/education/lpu.jpg" alt="LPU Full Logo" class="img-fluid" style="max-height: 150px;">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body p-4">
+                <h4 class="fw-semibold">B.Tech in Computer Science Engineering (ML & DL)</h4>
+                <h5 class="text-primary mb-2">Lovely Professional University, Punjab</h5>
+                <p class="text-muted mb-2"><i>Graduated: 2020</i></p>
+                <p>Specialized in <strong>Machine Learning & Deep Learning</strong>, with a strong foundation in AI systems and real-world ML applications.</p>
+
+                <button class="btn btn-sm btn-outline-primary mb-3" data-bs-toggle="collapse" data-bs-target="#courseDetails">View Course Details</button>
+
+                <div class="collapse" id="courseDetails">
+                  <ul class="list-unstyled mb-4">
+                    <li>📘 <strong>Core:</strong> DS, Algo, ML, DL, NLP, Data Science</li>
+                    <li>🛠 <strong>Stack:</strong> Python, TensorFlow, PyTorch, SQL</li>
+                    <li>🏆 <strong>Achievements:</strong> Hackathons, Kaggle, Projects</li>
+                  </ul>
+
+                  <div class="mb-3">
+                    <h6>Computer Science Fundamentals</h6>
+                    <div class="progress mb-2"><div class="progress-bar bg-success" style="width: 90%">90%</div></div>
+                    <h6>Python Proficiency</h6>
+                    <div class="progress mb-2"><div class="progress-bar bg-info" style="width: 85%">85%</div></div>
+                    <h6>ML/DL Proficiency</h6>
+                    <div class="progress"><div class="progress-bar bg-primary" style="width: 85%">85%</div></div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Typed.js Init -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    new Typed("#typed-name", {
+      strings: ["Sandeep Bandi"],
+      typeSpeed: 100,
+      showCursor: false
+    });
+
+    new Typed("#typed-role", {
+      strings: ["AI/ML Engineer", "MLOps Specialist", "GenAI Developer"],
+      typeSpeed: 80,
+      backSpeed: 40,
+      backDelay: 2000,
+      loop: true
+    });
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
 
@@ -1261,6 +1138,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Bootstrap 5 JS (with Popper) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 
 
 </body>
